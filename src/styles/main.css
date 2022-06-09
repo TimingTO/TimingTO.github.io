@@ -1,19 +1,31 @@
+:root {
+    --main-bg-color: lightgoldenrodyellow;
+    --secondary-bg-color: darkslategrey;
+    --main-light-font-color: azure;
+    --main-dark-font-color: black;
+    --focused-dark-font-color: darkcyan;
+    --unfocused-light-font-color: lightgray;
+    --main-font-family: "Montserrat Alternates", "Arial", sans-serif;
+    --small-font-size: 15px;
+    --medium-font-size: 25px;
+    --big-font-size: 35px;
+}
+
+/* //todo Web Mobile First */
+
 * {
     margin: 0;
     padding: 0;
+    font-family: var(--main-font-family);
 }
 
 a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: overline;
-}
-
-.navbar {
-    background-color: blanchedalmond;
-    position: absolute;
+.desktop-navbar {
+    background-color: var(--secondary-bg-color);
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,47 +33,40 @@ a:hover {
     height: 10vh;
 }
 
-.logo-container {
-    width: 100px;
-    height: inherit;
-    margin: 0 20px 0 0;
-}
-
 .nav-logo {
-    width: inherit;
-    height: inherit;
+    width: 100px;
+    height: 10vh;
 }
 
 .nav-element {
-    color: black;
-    font-size: x-large;
-    margin: 0 20px 0 0;
+    margin: 0 20px 0 10px;
 }
 
 .search-box {
-    padding: 3px 0 3px 20px;
-    font-size: large;
-    box-sizing: border-box;
+    width: 250px;
+    padding: 8px 12px;
     border-radius: 0.3em;
+    font-size: var(--small-font-size);
 }
 
-.search-box::placeholder {
-    color: grey;
-    font-size: small;
+.search-box:placeholder-shown {
+    width: 250px;
+    color: var(--unfocused-light-font-color);
+    font-size: var(--small-font-size);
 }
 
-.search-box-icon-container {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
+.search-button-container {
+    display: inline;
+    width: 40px;
+    height: 40px;
 }
 
-.search-box-icon-container:hover {
+.search-box-button:hover {
     cursor: pointer;
 }
 
 .search-box-button {
-    background-color: azure;
+    background-color: var(--main-light-font-color);
     position: absolute;
     width: inherit;
     height: inherit;
@@ -71,6 +76,34 @@ a:hover {
 .search-box-icon {
     position: relative;
     top: 6px;
-    left: 6px;
+    left: 2px;
     width: 25px;
+}
+
+.nav-menu {
+    position: fixed;
+    right: 20px;
+}
+
+.menu-element {
+    position: relative;
+    right: 0;
+}
+
+.link-container {
+    list-style: none;
+    display: inline;
+    margin: 10px 30px;
+    font-size: var(--medium-font-size);
+}
+
+.nav-link {
+    color: var(--main-light-font-color);
+}
+
+.nav-link:hover {
+    color: var(--focused-dark-font-color);
+    background-color: var(--main-bg-color);
+    border-radius: 0.2em;
+    padding: 4px 4px;
 }
